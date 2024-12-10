@@ -1,9 +1,8 @@
-"use client"; // Asegura que este componente se renderiza en el lado del cliente
+"use client"; 
 
 import { useEffect, useState } from "react";
 import { fetchData } from "@/componentes/funciones";
-import Tarjeta from "@/componentes/Tarjeta"; // Asegúrate de ajustar la ruta según sea necesario
-
+import Tarjeta from "@/componentes/Tarjeta"; 
 
 
 export default function RandomPokemonGen1Page() {
@@ -12,20 +11,21 @@ export default function RandomPokemonGen1Page() {
   useEffect(() => {
     const getRandomPokemonsGen2 = async () => {
       try {
-        // Obtén la lista de Pokémon de la generación 1
+        
         const response = await fetch('https://pokeapi.co/api/v2/generation/2/');
         const data = await response.json();
         const pokemonSpecies = data.pokemon_species;
 
-        // Selecciona 10 Pokémon aleatorios de la lista de la generación 2
+     /*  pokemon aleatorio 10 */
         const pokemonPromises = [];
         for (let i = 0; i < 10; i++) {
           const randomIndex = Math.floor(Math.random() * pokemonSpecies.length);
           const randomPokemonUrl = pokemonSpecies[randomIndex].url;
           const urlParts = randomPokemonUrl.split('/');
-          const randomId = urlParts[urlParts.length - 2]; // Extrae el ID del Pokémon
+          /* Extrae el ID del Pokémon */
+          const randomId = urlParts[urlParts.length - 2]; 
 
-          // Utiliza la función fetchData para obtener los datos del Pokémon
+          // función  para obtener los datos del Pokémon
           pokemonPromises.push(fetchData({ id: randomId }));
         }
 

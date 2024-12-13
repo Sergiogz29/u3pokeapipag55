@@ -42,6 +42,7 @@ export default function RandomPokemonGen1Page() {
 
   return (
     <>
+      {/* estilos incluido el color de fondo */}
       <section style={{backgroundColor:"red", display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         {pokemons.map((pokemon, index) => (
           <Tarjeta 

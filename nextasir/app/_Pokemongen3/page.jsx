@@ -1,9 +1,7 @@
-"use client"; // Asegura que este componente se renderiza en el lado del cliente
-
+"use client"; 
 import { useEffect, useState } from "react";
 import { fetchData } from "@/componentes/funciones";
-import Tarjeta from "@/componentes/Tarjeta"; // Asegúrate de ajustar la ruta según sea necesario
-
+import Tarjeta from "@/componentes/Tarjeta"; 
 
 
 export default function RandomPokemonGen3Page() {
@@ -12,7 +10,7 @@ export default function RandomPokemonGen3Page() {
   useEffect(() => {
     const getRandomPokemonsGen3 = async () => {
       try {
-        // Obtén la lista de Pokémon de la generación 1
+      /*   obtener lista generacion 3 */
         const response = await fetch('https://pokeapi.co/api/v2/generation/3/');
         const data = await response.json();
         const pokemonSpecies = data.pokemon_species;

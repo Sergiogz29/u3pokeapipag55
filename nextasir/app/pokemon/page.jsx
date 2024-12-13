@@ -8,7 +8,6 @@ export default function RandomPokemonPage() {
   const [pokemon, setPokemon] = useState(null);
 
   useEffect(() => {
-    
     const randomId = Math.floor(Math.random() * 1000) + 1;
 
 /*  datos del Pokémon aleatorio */
@@ -33,6 +32,7 @@ export default function RandomPokemonPage() {
     {/* aqui llamamos a nuestro componente tarjeta */}
       <Tarjeta 
         nombre={pokemon.nombre}
+       /*  no se usa tilde */
         id={pokemon.numero}
         imgSrc={pokemon.img}
         pokert="pokemon"

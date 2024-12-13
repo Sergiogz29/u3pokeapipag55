@@ -1,6 +1,9 @@
+/* oculta aqui la carpeta RandomPokemonGen3Page */
+
 import { fetchData } from "@/componentes/funciones";
 import { notFound } from "next/navigation";
 import ModalComponent from "@/componentes/Modal"; 
+import RandomPokemonGen3Page from "../page"
 
 export default async function Page({ params }) {
   const { id } = params;
@@ -24,7 +27,7 @@ export default async function Page({ params }) {
       <h4>HP:{pokemon.hp} - Ataque:{pokemon.ataque} - Defensa:{pokemon.defensa}</h4>
     </div>
   );
-  const modalSecondaryButtonText = "Cerrar";
+  const modalSecondaryButtonText = "cerrar";
 
   return (
     <>

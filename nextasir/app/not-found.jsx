@@ -1,23 +1,21 @@
-"use client"
+
+
+    "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 export default function Error() {
-    const router = useRouter();
-    const goToHome = () => {
-        router.push('/');
-      };
+  return (
 
-    return (
-        <>
-        <div>
-            <h2>Something went wrong! HORROR!!</h2>
-            <a href="/"><button> Botón con Link   </button></a>
-        </div>
-        <div>
-            <h2>Something went wrong! HORRO!</h2>
-            <button   onClick={goToHome}> Botón con useRouter </button>
-        </div>
-        </>
-    );
+  /*   aqui se agrega la imagen error */
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>Error  horror! 404</h1>
+      <p>La página que buscas no existe.</p>
+      <Link href="/">
+
+        <button style={{ padding: "10px 20px", backgroundColor: "blue", color: "white" }}>
+          Volver al Inicio
+        </button>
+      </Link>
+    </div>
+  );
 }
